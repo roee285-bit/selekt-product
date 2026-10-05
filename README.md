@@ -24,6 +24,7 @@
 - סיום משימה דורש Definition of Done ברור, לא רק "בוצע".
 
 ## מסמכים
+- [Scope Lock — MVP baseline](docs/SCOPE_LOCK_2026-10-05.md)
 - [תוכנית עבודה](docs/WORKPLAN.md)
 - [יומן החלטות](docs/DECISIONS.md)
 
