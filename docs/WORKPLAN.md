@@ -116,8 +116,20 @@ MVP ייחשב מוכן רק כאשר:
 - #12 — V2 Parking Lot / Scope Guard.
 
 ## סדר עדיפות לביצוע כרגע
-1. #1 Scope Lock.
+1. #1 Scope Lock — **הושלם וננעל ב-2026-10-05**.
 2. #2 Launch Gate.
 3. במקביל: #3, #4, #6, #7, #8 לפי מצב הפיתוח בפועל.
 4. #9 Supply readiness מתקדם במקביל לפיתוח.
 5. #10 + #11 לפני Go/No-Go.
+
+
+## Scope Lock — עדכון 2026-10-05
+ה-baseline המחייב נמצא ב-[SCOPE_LOCK_2026-10-05.md](SCOPE_LOCK_2026-10-05.md).
+
+Issues חדשים שנפתחו בעקבות ה-Gap Analysis:
+- #13 — Legal MVP Integration.
+- #14 — Lead Reliability & Status Matrix.
+- #15 — Verified Completeness & Recommendation Workflow.
+- #16 — Historical Integrity: ratings, inactive LOV, deletion & guest leads.
+
+ה-Scope Lock עדכן גם את #3, #4, #6, #7, #8, #9, #10, #11 ו-#12.
