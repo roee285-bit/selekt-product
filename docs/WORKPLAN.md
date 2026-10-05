@@ -99,3 +99,25 @@ MVP ייחשב מוכן רק כאשר:
 - Legal/public copy מוכנים.
 - QA עבר על mobile ו-desktop.
 - התקבלה החלטת Go מפורשת.
+
+
+## Backlog פעיל ב-GitHub
+- #1 — Scope Lock: ליישב את האפיון הראשי עם החלטות מאוחרות.
+- #2 — Launch Gate / Go-No-Go.
+- #3 — Discovery & Search.
+- #4 — Supplier & Programs.
+- #5 — Customer & Institution.
+- #6 — Lead Flow.
+- #7 — Admin Console.
+- #8 — Schema Integrity.
+- #9 — First Supply.
+- #10 — Public Readiness: Content / Legal.
+- #11 — End-to-End QA.
+- #12 — V2 Parking Lot / Scope Guard.
+
+## סדר עדיפות לביצוע כרגע
+1. #1 Scope Lock.
+2. #2 Launch Gate.
+3. במקביל: #3, #4, #6, #7, #8 לפי מצב הפיתוח בפועל.
+4. #9 Supply readiness מתקדם במקביל לפיתוח.
+5. #10 + #11 לפני Go/No-Go.
