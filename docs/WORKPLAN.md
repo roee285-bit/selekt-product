@@ -1,176 +1,116 @@
 # סלקט — תוכנית עבודה MVP → Launch
 
-> זהו מסמך Delivery. הוא מתרגם את אפיון המוצר לתוכנית ביצוע ואינו מחליף את האפיון הראשי.
+> מסמך Delivery מרכזי. תמונת העבודה היומית נמצאת ב-[Launch Board](BOARD.md). ה-Scope המחייב נמצא ב-[MVP Scope Lock](SCOPE_LOCK_2026-10-05.md).
 
-## יעד
-להביא את סלקט ל-MVP עובד ומוכן להשקה בחיפה והצפון, עם היצע איכותי ראשוני, חוויית חיפוש/יצירת קשר מלאה, יכולת ניהול אדמין, QA ותנאי Go/No-Go ברורים.
+## Current Plan — 2026-10-10
+
+### מטרה
+להביא את סלקט ל-MVP יציב ומוכן להשקה בחיפה והצפון, עם היצע איכותי, חיפוש ויצירת קשר מקצה לקצה, Trust layer ברור, עמודים ציבוריים שלמים, Legal מוכן, QA ומדידה בסיסית.
+
+### עכשיו
+1. #17 — תיקונים אחרי QA, Retest ו-Regression.
+2. #19 — דף שאלות ותשובות.
+3. #20 — דף "מהי סלקט / איך זה עובד".
+
+### אחר כך
+4. #18 — עמוד המגזין.
+5. #23 — דף לספקים / הצטרפו לסלקט.
+6. #10 + #13 — Public Readiness + Legal MVP.
+7. #21 — SEO, Social Sharing ו-Public Page Polish.
+8. #22 — Analytics בסיסי.
+9. #11 — Regression סופי.
+10. #2 — Go / No-Go.
+
+### במקביל
+- #9 — First Supply והשלמת כיסוי.
+- #3–#8 ו-#14–#16 — מיפוי מול מצב הפיתוח ברגע שתהיה גישת קריאה תקינה ל-repo של רואי.
+
+## מה חוסם Launch
+- P0 פתוח.
+- Lead flow לא אמין.
+- תקלה בהרשאות או פרטיות.
+- פרסום Supplier / Program / Review בניגוד לכללים.
+- Verified או GEFEN מוצגים באופן מטעה.
+- Legal Release חסר במקום שבו הוא נדרש.
+- Supply threshold שהוגדר לא הושג.
+- Regression סופי לא עבר על גרסת המועמדת ל-Production.
 
 ## מסלולי עבודה
 
-### 1. Product / Scope
-- לנעול Scope ל-MVP מול האפיון הראשי.
-- ליישב שינויים שאושרו אחרי גרסת האפיון הקיימת.
-- להגדיר Launch Gate וקריטריוני קבלה.
+### Product & Discovery
+#3 Discovery & Search, #4 Supplier & Programs, #5 Customer & Institution.
 
-### 2. Discovery & Search
-- Home + Hero + Search.
-- פילטרים: קטגוריה, אזור, גיל, סוג אירוע, גפ"ן.
-- Inspiration Chips קבועים וניתנים לניהול.
-- עמודי ספק ותוכנית.
-- אין Free-text LLM search ב-MVP.
+### Leads, Trust & Admin
+#6 Lead Flow, #7 Admin, #14 Lead Reliability, #15 Verified Workflow.
 
-### 3. Supplier
-- הרשמה ועריכת פרופיל.
-- ניהול תוכניות.
-- SELEKT Verified לפי כללי האפיון.
-- ייצוג גפ"ן ברמת התוכנית/הספק בהתאם להחלטה המאושרת.
-- Dashboard בסיסי להצגת לידים בלבד.
+### Data
+#8 Schema Integrity, #16 Historical Integrity.
 
-### 4. Customer / Institution
-- גלישה וחיפוש כאורח.
-- הרשמה לפרטי / מוסד.
-- מועדפים.
-- ביקורת רק לאחר ליד שנסגר כזכייה ובאישור אדמין.
+### Supply
+#9 First Supply.
 
-### 5. Leads
-- WhatsApp + הצגת טלפון מייצרים Lead.
-- תמיכה באורח ובמשתמש רשום.
-- סטטוס ליד מנוהל באדמין ב-MVP.
+### Public Content
+#18 Magazine, #19 FAQ, #20 About/How it works, #23 Suppliers landing page.
 
-### 6. Admin
-- אישור/דחיית ספקים.
-- Verified.
-- ביקורות.
-- LOV + Inspiration Chips.
-- ניהול סטטוס לידים.
+### Legal & Public Readiness
+#10 Public Readiness, #13 Legal Integration.
 
-### 7. Data
-- ACCOUNT + profiles.
-- PROGRAM.
-- LEAD / REVIEW / FAVORITE.
-- LOV / INSPIRATION_CHIP.
-- טבלאות interests.
-- Constraints ו-FKs לפי האפיון.
+### QA & Launch
+#17 QA fixes, #11 E2E QA, #21 SEO/Public Polish, #22 Analytics, #2 Go/No-Go.
 
-### 8. Supply readiness
-- First Supply לפני יצירת ביקוש אקטיבי.
-- יעד ההשקה לפי האפיון: 20–100 ספקים איכותיים.
-- מעקב אחר verified / completeness / coverage לפי קטגוריות ואירועים.
-
-### 9. Content / Legal / Launch
-- FAQ וטקסטים ציבוריים תואמים מוצר.
-- מסמכים משפטיים מאושרים לפרסום.
-- תוכן השקה בסיסי.
-- Analytics / measurement מינימלי להשקה.
-- Go/No-Go מסודר.
-
-## סדר ביצוע מומלץ
-
-### Phase A — Scope lock
-1. יישור קו בין האפיון הראשי לבין החלטות חדשות.
-2. הגדרת Launch Gate.
-3. זיהוי כל P0 blockers.
-
-### Phase B — Core product completion
-1. Discovery/Search.
-2. Supplier + Programs.
-3. Customer/Institution.
-4. Leads.
-5. Admin.
-6. Data integrity.
-
-### Phase C — Launch readiness
-1. Supply readiness.
-2. QA end-to-end.
-3. Legal/content.
-4. Measurement.
-5. Go/No-Go.
-
-### Phase D — Post launch
-רק אחרי השקה ונתונים אמיתיים: פריטי V2 כגון LLM search, dashboard מתקדם, personalization, dynamic chips, payments ו-lead status history.
+### Post Launch / V2
+#12 Scope Guard.
 
 ## Definition of Done להשקה
-MVP ייחשב מוכן רק כאשר:
+MVP מוכן ל-Go רק כאשר:
 - כל P0 סגורים.
-- ה-flow מחיפוש → ספק/תוכנית → יצירת Lead עובד end-to-end.
-- פעולות האדמין הקריטיות עובדות.
-- אין פער ידוע בין schema לבין התנהגות המוצר.
-- יש היצע התחלתי מספק להשקה.
-- Legal/public copy מוכנים.
-- QA עבר על mobile ו-desktop.
+- Search → Program → WhatsApp/Phone → Lead עובד end-to-end.
+- פעולות Admin הקריטיות עובדות.
+- schema, API ו-UI עקביים.
+- Supply threshold הושג.
+- FAQ, About/How it works ועמודי Legal מוכנים.
+- QA עבר Mobile + Desktop.
+- Regression עבר על אותה build שמיועדת להשקה.
+- קיימת מדידת Search → Program → Lead בסיסית.
 - התקבלה החלטת Go מפורשת.
 
+## Backlog
+- #1 Scope Lock — Done.
+- #2 Launch Gate.
+- #3 Discovery & Search.
+- #4 Supplier & Programs.
+- #5 Customer & Institution.
+- #6 Lead Flow.
+- #7 Admin Console.
+- #8 Schema Integrity.
+- #9 First Supply.
+- #10 Public Readiness.
+- #11 End-to-End QA.
+- #12 V2 Scope Guard.
+- #13 Legal MVP Integration.
+- #14 Lead Reliability & Status Matrix.
+- #15 Verified & Recommendation Workflow.
+- #16 Historical Integrity.
+- #17 QA fixes + Regression.
+- #18 Magazine.
+- #19 FAQ.
+- #20 What is SELEKT / How it works.
+- #21 SEO & Public Page Polish.
+- #22 Launch Analytics.
+- #23 Suppliers / Join SELEKT.
 
-## Backlog פעיל ב-GitHub
-- #1 — Scope Lock: ליישב את האפיון הראשי עם החלטות מאוחרות.
-- #2 — Launch Gate / Go-No-Go.
-- #3 — Discovery & Search.
-- #4 — Supplier & Programs.
-- #5 — Customer & Institution.
-- #6 — Lead Flow.
-- #7 — Admin Console.
-- #8 — Schema Integrity.
-- #9 — First Supply.
-- #10 — Public Readiness: Content / Legal.
-- #11 — End-to-End QA.
-- #12 — V2 Parking Lot / Scope Guard.
+## היסטוריית החלטות תמציתית
+### 2026-10-05
+- Scope Lock ננעל.
+- גפ"ן ברמת PROGRAM.
+- Activity Format: חד-פעמי / מתמשך / שניהם.
+- התאמה לחינוך מיוחד ברמת PROGRAM.
+- Multi-region לספק.
+- approval הופרד מ-SELEKT Verified.
+- naming אחיד ל-Lead/Review.
+- Legal MVP הוגדר כתנאי השקה.
 
-## סדר עדיפות לביצוע כרגע
-1. #1 Scope Lock — **הושלם וננעל ב-2026-10-05**.
-2. #2 Launch Gate.
-3. במקביל: #3, #4, #6, #7, #8 לפי מצב הפיתוח בפועל.
-4. #9 Supply readiness מתקדם במקביל לפיתוח.
-5. #10 + #11 לפני Go/No-Go.
-
-
-## Scope Lock — עדכון 2026-10-05
-ה-baseline המחייב נמצא ב-[SCOPE_LOCK_2026-10-05.md](SCOPE_LOCK_2026-10-05.md).
-
-Issues חדשים שנפתחו בעקבות ה-Gap Analysis:
-- #13 — Legal MVP Integration.
-- #14 — Lead Reliability & Status Matrix.
-- #15 — Verified Completeness & Recommendation Workflow.
-- #16 — Historical Integrity: ratings, inactive LOV, deletion & guest leads.
-- #17 — QA fixes + regression.
-- #18 — Magazine page.
-- #19 — FAQ page.
-- #20 — What is SELEKT / How it works.
-- #21 — SEO & public page polish.
-- #22 — Launch analytics.
-
-ה-Scope Lock עדכן גם את #3, #4, #6, #7, #8, #9, #10, #11 ו-#12.
-
-
-## עדכון תוכנית עבודה — 2026-10-10
-
-### QA וייצוב לפני השקה
-- #17 — תיקונים אחרי סבב QA + Retest + Regression מלא.
-- #11 נשאר שער ה-QA הכולל; #17 מרכז את התיקונים עצמם.
-- אין Launch עם P0 QA פתוח.
-
-### עמודים ציבוריים שחייבים להשלים
-- #18 — עמוד המגזין של סלקט.
-- #19 — דף שאלות ותשובות.
-- #20 — דף "מהי סלקט / איך זה עובד".
-- #21 — SEO, Social Sharing ו-Public Page Polish.
-
-### מדידת ההשקה
-- #22 — Analytics בסיסי: Search → Program → Lead + Zero Results.
-
-### סדר ביצוע מעודכן
-1. לסגור תיקוני QA ב-#17.
-2. להשלים את עמודי הציבור הקריטיים: #19 ו-#20.
-3. להשלים את עמוד המגזין #18.
-4. להשלים Legal/Public Readiness דרך #10 ו-#13.
-5. להשלים SEO ושיתוף #21.
-6. לוודא מדידה בסיסית דרך #22.
-7. להריץ Regression סופי דרך #11.
-8. לבצע Go/No-Go לפי #2.
-
-### דברים שלא נשכחו וכבר מנוהלים ב-Backlog
-- מסמכים משפטיים, פרטיות, consent, דיווח וסגירת חשבון — #13.
-- Supplier / Program / Verified — #4 ו-#15.
-- Leads — #6 ו-#14.
-- Supply readiness — #9.
-- Data integrity — #8 ו-#16.
-- Launch Gate — #2.
+### 2026-10-10
+- נוספו QA fixes, Magazine, FAQ, About/How it works, SEO ו-Analytics.
+- נוסף דף ייעודי לספקים.
+- לכל Issue צורפו מסמכי מקור רלוונטיים מדרייב.
