@@ -131,5 +131,46 @@ Issues חדשים שנפתחו בעקבות ה-Gap Analysis:
 - #14 — Lead Reliability & Status Matrix.
 - #15 — Verified Completeness & Recommendation Workflow.
 - #16 — Historical Integrity: ratings, inactive LOV, deletion & guest leads.
+- #17 — QA fixes + regression.
+- #18 — Magazine page.
+- #19 — FAQ page.
+- #20 — What is SELEKT / How it works.
+- #21 — SEO & public page polish.
+- #22 — Launch analytics.
 
 ה-Scope Lock עדכן גם את #3, #4, #6, #7, #8, #9, #10, #11 ו-#12.
+
+
+## עדכון תוכנית עבודה — 2026-10-10
+
+### QA וייצוב לפני השקה
+- #17 — תיקונים אחרי סבב QA + Retest + Regression מלא.
+- #11 נשאר שער ה-QA הכולל; #17 מרכז את התיקונים עצמם.
+- אין Launch עם P0 QA פתוח.
+
+### עמודים ציבוריים שחייבים להשלים
+- #18 — עמוד המגזין של סלקט.
+- #19 — דף שאלות ותשובות.
+- #20 — דף "מהי סלקט / איך זה עובד".
+- #21 — SEO, Social Sharing ו-Public Page Polish.
+
+### מדידת ההשקה
+- #22 — Analytics בסיסי: Search → Program → Lead + Zero Results.
+
+### סדר ביצוע מעודכן
+1. לסגור תיקוני QA ב-#17.
+2. להשלים את עמודי הציבור הקריטיים: #19 ו-#20.
+3. להשלים את עמוד המגזין #18.
+4. להשלים Legal/Public Readiness דרך #10 ו-#13.
+5. להשלים SEO ושיתוף #21.
+6. לוודא מדידה בסיסית דרך #22.
+7. להריץ Regression סופי דרך #11.
+8. לבצע Go/No-Go לפי #2.
+
+### דברים שלא נשכחו וכבר מנוהלים ב-Backlog
+- מסמכים משפטיים, פרטיות, consent, דיווח וסגירת חשבון — #13.
+- Supplier / Program / Verified — #4 ו-#15.
+- Leads — #6 ו-#14.
+- Supply readiness — #9.
+- Data integrity — #8 ו-#16.
+- Launch Gate — #2.
