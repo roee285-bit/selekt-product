@@ -25,6 +25,7 @@
 
 ## מסמכים
 - [Launch Board](docs/BOARD.md) — מה עושים עכשיו ומה חוסם Launch
+- [GitHub Project Setup](docs/GITHUB_PROJECT_SETUP.md) — מפרט ה-Board האינטראקטיבי
 - [Scope Lock — MVP baseline](docs/SCOPE_LOCK_2026-10-05.md)
 - [תוכנית עבודה](docs/WORKPLAN.md)
 - [יומן החלטות](docs/DECISIONS.md)
