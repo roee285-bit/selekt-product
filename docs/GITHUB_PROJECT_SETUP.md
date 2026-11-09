@@ -1,5 +1,24 @@
 # GitHub Project Setup — סלקט
 
+## עדכון תפעולי — DEV בלבד (2026-11-09)
+
+**המקור התפעולי הנוכחי:** [DEV Task Board](BOARD.md). בשלב זה מנהלים רק פיתוח, התאמה לאפיון ובדיקות ב־[selekt-dev.vercel.app](https://selekt-dev.vercel.app). Production/Launch לא נמדדים או מקודמים בבורד הפעיל.
+
+**הבחנה חשובה:** קובץ זה מתאר כיצד להגדיר/לסדר את GitHub Projects האינטראקטיבי; חיבור GitHub הנוכחי מאפשר לערוך Issues ומסמכי repo, **לא** לעדכן ישירות את שדות ה־Projects (כמו Status/Column). אין להציג המלצת שיבוץ כסטטוס ששונה בפועל.
+
+### תצוגת עבודה מוצעת — DEV MVP1
+- **Project view:** `DEV — Current Work` (כאשר קיים שדה Environment: DEV בלבד; אחרת view ידני על פי רשימת Issues בבורד).
+- **Columns / workflow:** `Backlog` → `Decision Needed` / `Ready` → `In Progress` → `Needs DEV Verification` → `Review / QA` → `Done`; `Deferred` בנפרד. אלו שמות מומלצים, לא שדות שהוגדרו בפועל.
+- **Priority:** P0 עבור אי־התאמות קריטיות מול האפיון; P1 להשלמת תוכן ופוליש; P2 ל־V2.
+- **Current focus:** החלטת Guest Contact (#6), Multi-role (#5/#8), הצגת GEFEN (#3/#4); בדיקת מימוש DEV בפועל (#3/#4/#7/#13/#15); QA ממוקד DEV (#17/#11).
+- **Defer:** חינוך מיוחד ל־V2 (#12); #2 Launch Gate מחוץ לתצוגת DEV הפעילה.
+- **Evidence field recommended:** `Code only` / `DEV observed` / `DEV tested` / `Blocked by environment`. אין לסמן Done על בסיס ZIP או screenshot בלבד.
+- **No mutations:** אין שינוי בסטטוס Issues, Assignees, פיתוח או Production בעקבות מסמך זה.
+
+---
+
+## תכנון מקורי (היסטורי — מתייחס ל־Launch)
+
 > מפרט מוכן להקמת ה-Project האינטראקטיבי. ה-Connector המחובר ל-ChatGPT אינו תומך כרגע ביצירה/עריכה של GitHub Projects, לכן הקובץ הזה מגדיר בדיוק את המבנה שעל ה-UI להכיל.
 
 ## Project
