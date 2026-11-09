@@ -2,7 +2,43 @@
 
 > מסמך Delivery מרכזי. תמונת העבודה היומית נמצאת ב-[Launch Board](BOARD.md). ה-Scope המחייב נמצא ב-[MVP Scope Lock](SCOPE_LOCK_2026-10-05.md).
 
-## Current Plan — 2026-10-10
+## Current Plan — 2026-11-09 | ביקורת קוד השותף
+
+**מקור עדכון:** `selekt-main.zip` שהועלה ב־9.11.2026, עם מצב פיתוח מתועד עד 25.10.2026. [דוח ביקורת סטטית וראיות](DEV_SNAPSHOT_AUDIT_2026-11-09.md). **לא** נבדקו live DB, Production, build, test execution או SHA של מקור הארכיון. הסטטוס להלן הוא **evidence-from-code**, לא Sign-off.
+ה־[Scope Lock](SCOPE_LOCK_2026-10-05.md) נשאר בתוקף. חריגה בקוד אינה החלטת מוצר מאושרת.
+
+### NOW — שלושה שערי עבודה
+1. **שער החלטות מוצר (P0):** להכריע עם השותף האם שומרים על Guest Lead ללא הרשמה (#6), על Multi-role account (#5/#8), האם ומתי מציגים GEFEN (#3/#4), ומה עושים עם עדכון סטטוס ליד בידי ספק + היסטוריית ליד שכבר פותחו למרות דחייתם ל־V2 (#6/#12). לא משנים קוד/Scope על סמך ההכרה בפער.
+2. **פערי MVP מאומתים סטטית (P0):** להשלים `PROGRAM.activity_format` עם חד־פעמי/מתמשך/שניהם ו־`special_education_fit` + תג נכון, בשכבות DB/UI/QA (#4/#8/#11); לאמת versioned `LEGAL_ACCEPTANCE` ו־Legal Release (#13).
+3. **QA ו־Release Evidence (P0):** למפות ממצאי #17 ו־#11 לגרסת פיתוח אמת; לבדוק Lead transitions, RLS, מחיקות היסטוריות, onboarding/Verified, 390×844/768/1280 ורגרסיה. אין לסמן PASS על סמך מסמכי הפיתוח בלבד.
+
+### NEXT — תוכן ציבורי ומוכנות השקה
+4. #19 + #20 — FAQ ו״מהי סלקט / איך זה עובד״ (לא נמצאו routes ייעודיים בקוד שסופק).
+5. #23 + #18 — דף ספקים ומגזין; נדרש מיפוי תוכן, קופי ו־UX.
+6. #10 + #13 — השלמת Legal/public copy מאושר, פרטי מפעיל, פרטיות, הסכמות ונתיבי דיווח.
+7. #21 + #22 — SEO/social previews ו־Search → Program → Lead analytics לאחר אימות כללי פרטיות.
+8. #11 — QA עצמאי סופי על Build מועמדת להשקה.
+9. #2 — החלטת GO/NO-GO עם ראיות וסגירת כל P0.
+
+### PARALLEL — עבודה עסקית
+- #9 — First Supply: יעד 20–100 ספקים איכותיים; צילום הקוד מתעד ב־25.10.2026 אפס ספקים אמיתיים ב־Production **נכון לאותו תיעוד בלבד**. יש לבדוק היום מספר מאושרים/Verified/תוכניות וכיסוי קטגוריה×אזור×גיל; אין להסיק מצב עדכני מה־ZIP.
+- #3–#8, #14–#16 — קיימים רכיבי קוד נרחבים, אך כל Issue פתוח דורש מיפוי Acceptance ו־Runtime Evidence לפני Done.
+
+### חריגות מוצר שלא אושרו
+- **Guest contact:** קוד ה־Signup Gate וה־DB מונעים Lead של אורח, בניגוד ל־Scope Lock.
+- **Account profiles:** `guard_one_profile` מנוגד לתמיכה בכמה תפקידי משתמש.
+- **Program metadata:** חסר `special_education_fit`; `is_ongoing` אינו מחליף שלוש אפשרויות Activity Format.
+- **GEFEN:** מידע קיים, תצוגה ציבורית מוסתרת עם `SHOW_GEFEN=false`.
+- **V2 creep:** Supplier משנה Lead status ויש טבלת `lead_status_history`.
+- **Legal:** חסרה עדות למנגנון `LEGAL_ACCEPTANCE` גרסאי; קיים consent timestamps בסיסי.
+- **Verified references:** קיים אישור אדמין ידני; לא נמצא קישור המלצה חד־פעמי ל־14 יום.
+
+### תנאי מעבר ל־Done
+`Implemented in archive` ≠ `Runtime PASS` ≠ `Production verified`. לא סוגרים Issue/Launch Gate לפני בדיקה מול גרסת Build ו־DB מזוהות, ראיות, החלטת מוצר רשומה ו־QA עצמאית.
+
+---
+
+## Historical Plan — 2026-10-10 (נשמר למעקב)
 
 ### מטרה
 להביא את סלקט ל-MVP יציב ומוכן להשקה בחיפה והצפון, עם היצע איכותי, חיפוש ויצירת קשר מקצה לקצה, Trust layer ברור, עמודים ציבוריים שלמים, Legal מוכן, QA ומדידה בסיסית.
