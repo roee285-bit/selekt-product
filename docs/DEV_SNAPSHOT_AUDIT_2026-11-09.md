@@ -35,8 +35,8 @@
 | עדיפות בדיקה | נושא / Issue | ראיית קוד | פער ומצב |
 |---|---|---|---|
 | P0 — החלטת מוצר | #6, #3, #11: Lead של אורח | `web/src/app/programs/[id]/actions.ts` מחזיר `sign_in`; `20261025000034_contact_gate_db.sql` מעלה `sign_in_required`; `web/src/components/contact-gate.tsx` | אורח יכול לחפש אך לא לחשוף פרטי קשר/ליצור Lead. **סותר את ה־MVP** שמאפשר Lead אורח; לא לפתור אוטומטית בלי החלטה |
-| P0 — חסר ב־MVP | #4, #8, #11: התאמה לחינוך מיוחד | לא נמצא `special_education_fit` בסכמות/טופס/תצוגות `program` | להגדיר `not_specified/suitable/not_suitable` ותג ברמת Program; Requires implementation + QA |
-| P0 — חסר ב־MVP | #4, #8, #11: Activity Format | `web/src/app/supplier/programs/program-form.tsx` + `web/src/app/supplier/actions.ts` משתמשים ב־`is_ongoing` בלבד | אינו מייצג מפורשות שלושה מצבים: חד־פעמי / מתמשך / שניהם |
+| V2 — לא חסם השקה | #12: התאמה לחינוך מיוחד | לא נמצא `special_education_fit` בסכמות/טופס/תצוגות `program` | נדחה במפורש מ־MVP1 בהחלטת בעל המוצר מ־2026-11-09; אין צורך במימוש או QA להשקה |
+| Acceptance verification — not proven failure | #4, #8, #11: Activity Format | `program-form.tsx` + `actions.ts` + `programs/[id]/page.tsx` תומכים ב־`is_ongoing` ובפרטי פעילות מתמשכת; נמסר צילום מסך DEV תואם | פעילויות מתמשכות קיימות. לא נבדק האם ניתן לאפיין תוכנית אחת במפורש כ״שניהם״ בהתאם ל־Scope Lock; נדרשת הבהרת Acceptance, ולא הוכח באג |
 | P0 — החלטת מוצר | #5, #8, #11: Multi-role account | `supabase/migrations/20261017000026_post_qa_data_rules.sql` `guard_one_profile`; `web/src/app/onboarding/page.tsx` | קוד אוכף פרופיל עסקי אחד לחשבון; Scope Lock מחייב אפשרות לכמה פרופילי תפקיד |
 | P0 — פער משפטי | #13: Legal acceptance | `20261005000013_account_consents.sql`, `20261005000014_supplier_wizard_fields.sql` | קיימות חותמות הסכמה, אך לא נמצא `LEGAL_ACCEPTANCE` לפי document_key/version_id/accepted_at/context; נדרשת התאמה ל־Legal Release |
 | P0 — חסר ציבורי | #19, #20; #18/#23 בהמשך | מפת routes תחת `web/src/app/` | אין routes ייעודיים שנמצאו ל־FAQ, About/How it works, Magazine, Join Suppliers; יש מסכי הרשמה קיימים, לא עמודי הסבר אלה |
@@ -58,7 +58,7 @@
 ## סדר פעולות מומלץ — ללא שינוי ה־Scope אוטומטי
 
 1. **Product decision gate:** לסגור במפורש Guest Contact, Multi-role, GEFEN, Supplier status/history; לתעד החלטות מאושרות ב־Decision Log וליישר אפיון/Issues לפני שינוי קוד.
-2. **P0 technical gaps:** Activity Format (3 מצבים), Special Education, Versioned Legal Acceptance; לבדוק גם deletion/historical integrity והרשאות.
+2. **Implementation/Acceptance:** לבדוק Legal Acceptance גרסאי, deletion/historical integrity והרשאות; פעילות מתמשכת קיימת ובדיקת ״שניהם״ נשארת פתוחה. חינוך מיוחד הוא V2 ואינו P0.
 3. **Public readiness:** FAQ, About/How it works, Suppliers page, Magazine; תוכן משפטי ומיתוג לפי תנאים מאושרים.
 4. **Supply + measurement:** אימות בפועל של ספקים אמיתיים, צפיפות לפי קטגוריה/אזור/גיל ומדדי Search → Program → Lead בהתאם להסכמה.
 5. **Independent QA:** לבדוק קוד/DB מותקנים ומועמד גרסה ב־mobile/tablet/desktop, כולל Regression, Legal, Trust ו־Leads.
