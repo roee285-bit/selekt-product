@@ -1,59 +1,58 @@
-# סלקט — Launch Board
+# סלקט — DEV Task Board
 
-> מעודכן ל־2026-11-09 על בסיס ביקורת סטטית של ארכיון קוד השותף (הארכיון מתעד פיתוח עד 2026-10-25). [דוח הפערים והראיות](DEV_SNAPSHOT_AUDIT_2026-11-09.md) · [תוכנית העבודה](WORKPLAN.md) · [Scope Lock](SCOPE_LOCK_2026-10-05.md).
+**עודכן:** 2026-11-09  
+**סביבה פעילה לניהול:** [SELEKT DEV](https://selekt-dev.vercel.app/) בלבד.  
+**מאגר ניהול:** `roee285-bit/selekt-product`. **מאגר קוד:** `royrozen/selekt` — לא נגיש ישירות דרך החיבור הנוכחי; תמונת קוד קיימת בארכיון `selekt-main.zip`.  
+**מקורות:** [תוכנית העבודה](WORKPLAN.md), [תצפית DEV](DEV_HOME_READONLY_2026-11-09.md), [סקירת קוד סטטית](DEV_SNAPSHOT_AUDIT_2026-11-09.md), [Scope Lock והעדכון מ־2026-11-09](SCOPE_LOCK_2026-10-05.md).
 
-## ראיות DEV (2026-11-09)
+> **מטרת הבורד כרגע:** לדעת מה קיים בקוד, מה נצפה ב־DEV ומה חסר אישור או בדיקה. אין להסיק מצב Production, אין להריץ תהליכים ב־Production, ואין לקדם כאן Launch GO/NO-GO. הבורד אינו אישור לשינוי קוד.
 
-- **Observed:** עמוד הבית החי כולל Hero/חיפוש, קטגוריות, תוכניות, Verified suppliers, ניווט לחשבון/אדמין/ספק בסשן מחובר, וקישורי Legal ב־Footer.
-- **Not Tested:** Guest flow, search results, program details, contact action, login, Lead creation, admin operations, 390×844/768/1280, Production. לא לשנות Issue status עקב הצגת UI בלבד.
-- **Seed/QA:** כרטיסים עם שמות בדיקות מופיעים ב־DEV; יש לוודא שאינם נספרים כ־First Supply אמיתי ואינם מופיעים בהשקה לציבור.
-- **Evidence:** [DEV Home read-only observation](DEV_HOME_READONLY_2026-11-09.md). בדיקת הדפדפן המחובר היא Read-only page context ללא ניווט; בדפדפן מקומי הגישה לרשת חסומה, לא תקלה מוכחת באתר.
+## NOW — שלושה מוקדים בלבד
 
----
+### 1. החלטות מוצר לפני עבודה נוספת — DECISION NEEDED
+- [#6 — Lead לאורח](https://github.com/roee285-bit/selekt-product/issues/6): ה־ZIP מחייב התחברות ליצירת קשר, בניגוד ל־Scope Lock. **החלטת מוצר נדרשת**; התנהגות אורח ב־DEV טרם נבדקה.
+- [#5 — Multiple roles](https://github.com/roee285-bit/selekt-product/issues/5) + [#8 — Data/Schema](https://github.com/roee285-bit/selekt-product/issues/8): בקוד קיים `guard_one_profile` מול דרישת מספר תפקידים לאותו חשבון. **פער קוד–אפיון**, לא כישלון DEV מוכח.
+- [#3 — GEFEN](https://github.com/roee285-bit/selekt-product/issues/3) + [#4 — תוכניות](https://github.com/roee285-bit/selekt-product/issues/4): `SHOW_GEFEN=false` בארכיון; לברר אם ההסתרה מכוונת בשלב DEV ואילו בדיקות נדרשות.
+- [#12 — Scope Guard](https://github.com/roee285-bit/selekt-product/issues/12): מנגנוני עדכון סטטוס ליד בידי ספק והיסטוריית לידים קיימים ב־ZIP אף שנדחו ל־V2. לא לשנות Scope ללא החלטה.
 
-## תיקון מצב — 2026-11-09
+### 2. מיפוי מימוש מול DEV — NEEDS DEV VERIFICATION
+- [#3 — Discovery/Search](https://github.com/roee285-bit/selekt-product/issues/3): **נצפו** Home, חיפוש, קטגוריות, כרטיסי ספקים ותוכניות. **לא נבדקו** תוצאות חיפוש, פילטרים וניווט מלא.
+- [#4 — Supplier/Programs](https://github.com/roee285-bit/selekt-product/issues/4): **נצפו בצילום DEV של בעל המוצר** פעילות מתמשכת, תדירות, משך ומספר משתתפים; הקוד כולל שדות ושמירה. בדיקות שמירה חיות לא בוצעו. לבדוק רק אם מצב ״שניהם״ נדרש במפורש.
+- [#6 — Lead Flow](https://github.com/roee285-bit/selekt-product/issues/6) + [#14 — Lead Reliability](https://github.com/roee285-bit/selekt-product/issues/14): לבדוק את התנהגות ה־CTA וה־sign-in gate בסשן אורח **ללא שליחת ליד**; אחר כך לתכנן בדיקות כתיבה עם אישור נפרד.
+- [#7 — Admin](https://github.com/roee285-bit/selekt-product/issues/7) + [#15 — Verified](https://github.com/roee285-bit/selekt-product/issues/15): בדף הבית המחובר הופיע קישור Admin ותגי Verified. פעולות וזרימת המלצות **לא נבדקו**.
+- [#13 — Legal](https://github.com/roee285-bit/selekt-product/issues/13) + [#16 — Data integrity](https://github.com/roee285-bit/selekt-product/issues/16): קיימים רכיבי קוד, אך consent גרסאי, הגנות מחיקה ושמירה על היסטוריה דורשים אימות ברמת DB/API.
 
-- **חינוך מיוחד:** עבר ל־V2 בהחלטת בעל המוצר; **אינו חסם MVP1**. כל אזכור ישן של חוסר `special_education_fit` כחסם P0 להלן מתוקן בהתאם.
-- **פעילות מתמשכת:** קיימת בקוד ובצילום DEV: checkbox, תדירות, משך מפגש ומשתתפים; אינה ״חסרה״. מצב ״שניהם״ מחייב בדיקת Acceptance/הבהרה, לא סיווג Failure.
-- **Env:** נבדק ZIP סטטי בלבד בתוספת צילום מסך שסיפק בעל המוצר. לא נבדקה DEV או PROD חיה.
+### 3. QA ממוקד DEV — QA / BLOCKED BY ACCESS
+- [#17 — QA defects & retest](https://github.com/roee285-bit/selekt-product/issues/17) ו־[#11 — E2E QA](https://github.com/roee285-bit/selekt-product/issues/11).
+- בדיקות יעד: desktop ו־viewport `390×844`, `768`, `1280`; זרימות Guest/Search, User, Supplier ו־Admin; השלמות Legal/Privacy והרשאות.
+- **מצב ראיות:** עמוד הבית נצפה באמצעות קריאת לשונית מחוברת בלבד, ללא ניווט/לחיצה. לא בוצעו מבחני responsive או E2E ב־DEV. מגבלת כלי הבדיקה אינה FAIL של המוצר.
+- **כלל:** Retest/Regression רק מול גרסת DEV מזוהה. אין הרשאה לכתיבה עסקית, הרשמה, יצירת ליד או שינוי חשבונות בבדיקה הזו.
 
-**Status:** RELEASE READINESS NOT VERIFIED / NO-GO להחלטת השקה על סמך הראיות הזמינות בלבד. זה אינו קביעה ש־Production נכשל; לא בוצעה בדיקת Runtime עדכנית.
+## NEXT — מוכן לאפיון/פיתוח ב־DEV (לא אומת כמיושם)
 
-## NOW — מיקוד נוכחי (3 שערים)
+- [#19 — FAQ](https://github.com/roee285-bit/selekt-product/issues/19), [#20 — מהי סלקט / איך זה עובד](https://github.com/roee285-bit/selekt-product/issues/20): דרושים נתיבים, תוכן וקופי; לא נמצאו עמודי route ייעודיים בארכיון שנבדק.
+- [#23 — דף לספקים](https://github.com/roee285-bit/selekt-product/issues/23), [#18 — מגזין](https://github.com/roee285-bit/selekt-product/issues/18): דרישות תוכן ועיצוב ב־DEV, לא להניח שאין מימוש חדש מאז צילום הקוד.
+- [#10 — Public copy](https://github.com/roee285-bit/selekt-product/issues/10) + [#13 — Legal integration](https://github.com/roee285-bit/selekt-product/issues/13): בעמוד הבית קיימים קישורים משפטיים, אך תוכן, גרסאות הסכמה וזרימות טרם אומתו.
+- [#21 — SEO/social](https://github.com/roee285-bit/selekt-product/issues/21), [#22 — Analytics](https://github.com/roee285-bit/selekt-product/issues/22): קוד בסיסי קיים; בדיקות DEV מול תרחישים ואירועי מדידה עדיין נדרשות.
 
-1. **Product decisions — P0:** [#6 Guest Lead](https://github.com/roee285-bit/selekt-product/issues/6), [#5/#8 Multi-role](https://github.com/roee285-bit/selekt-product/issues/8), [#3 GEFEN](https://github.com/roee285-bit/selekt-product/issues/3), [#12 Supplier status/history V2](https://github.com/roee285-bit/selekt-product/issues/12). סתירות בין הקוד ל־Scope Lock; **דרוש אישור, אין שינוי החלטה אוטומטי**.
-2. **Legal + targeted Acceptance — P0/P1:** [#13 Legal](https://github.com/roee285-bit/selekt-product/issues/13), [#4 Program](https://github.com/roee285-bit/selekt-product/issues/4), [#8 Schema](https://github.com/roee285-bit/selekt-product/issues/8). בדיקת versioned Legal Acceptance ו־Verified links; אימות ״שניהם״ לפי Acceptance. פעילות מתמשכת קיימת; חינוך מיוחד ב־V2, לא P0.
-3. **Release evidence + QA — P0:** [#17 QA fixes](https://github.com/roee285-bit/selekt-product/issues/17), [#11 E2E](https://github.com/roee285-bit/selekt-product/issues/11), [#14 Leads](https://github.com/roee285-bit/selekt-product/issues/14), [#16 Integrity](https://github.com/roee285-bit/selekt-product/issues/16). בדיקות על Build/DB מזוהים, Regression מלא, מובייל/טאבלט/דסקטופ; אין להמיר חסם Browser בכישלון אפליקציה.
+## PARALLEL — נתונים ו־Supply בסביבת DEV
 
-## NEXT — השלמת עמודים ציבוריים ושער השקה
+- [#9 — First Supply](https://github.com/roee285-bit/selekt-product/issues/9): ב־DEV נצפו ספקים ותוכניות, כולל רשומות QA. יש להבדיל בין נתוני דמה לבין ספקים אמיתיים; אין להסיק מכך עמידה ביעד המסחרי 20–100.
 
-- [#19 — FAQ](https://github.com/roee285-bit/selekt-product/issues/19) + [#20 — מהי סלקט / איך זה עובד](https://github.com/roee285-bit/selekt-product/issues/20): לא נמצאו נתיבי עמוד ייעודיים בארכיון.
-- [#23 — דף הצטרפות לספקים](https://github.com/roee285-bit/selekt-product/issues/23) + [#18 — מגזין](https://github.com/roee285-bit/selekt-product/issues/18): לא נמצאו routes ייעודיים.
-- [#10 — Public/Legal](https://github.com/roee285-bit/selekt-product/issues/10) + [#13 — Legal integration](https://github.com/roee285-bit/selekt-product/issues/13): פרטי מפעיל, נוסחים מאושרים והסכמות.
-- [#21 — SEO & Social](https://github.com/roee285-bit/selekt-product/issues/21) + [#22 — Analytics](https://github.com/roee285-bit/selekt-product/issues/22): יסודות קיימים בקוד; השלמה ואימות השקה נדרשים.
-- [#11 — E2E & Regression](https://github.com/roee285-bit/selekt-product/issues/11) → [#2 — Go/No-Go](https://github.com/roee285-bit/selekt-product/issues/2): רק לאחר ראיות לכל שער.
+## DONE — החלטות בלבד, לא בדיקת מערכת
+- [#1 — MVP Scope Lock](https://github.com/roee285-bit/selekt-product/issues/1) — החלטת אפיון נעולה, עם עדכון מאושר מ־2026-11-09.
 
-## PARALLEL — Supply
+## DEFERRED — לא ב־DEV MVP1
+- [#12 — V2 Parking Lot](https://github.com/roee285-bit/selekt-product/issues/12): **חינוך מיוחד** (החלטת בעל המוצר מ־2026-11-09); יחד עם יתר פיצ'רי V2. פעילות מתמשכת **לא** נדחתה, ומומשה בממשק לפי צילום ו־ZIP.
+- [#2 — Launch GO/NO-GO](https://github.com/roee285-bit/selekt-product/issues/2): נשאר רשום להמשך, אך **מחוץ למיקוד הבורד הנוכחי**. אין החלטת השקה כעת.
 
-- [#9 — First Supply](https://github.com/roee285-bit/selekt-product/issues/9): להשיג ולוודא יעד מאושר של 20–100 ספקים איכותיים, עם צפיפות קטגוריה×אזור×גיל. הארכיון מתעד אפס ספקים אמיתיים ב־Production נכון ל־2026-10-25; **אין מכאן מידע על המצב הנוכחי**.
+## מפתח סטטוסים ואיכות ראיות
 
-## IMPLEMENTED IN SNAPSHOT — עדיין לא Done
+- **Decision Needed:** נדרשת הכרעת בעל המוצר לפני שינוי Scope או קוד.
+- **Ready for DEV:** מוגדר מה צריך לבנות או להשלים, אך לא סומן Done.
+- **Needs DEV Verification:** קיים קוד/ממשק, טרם עבר בדיקה אינטראקטיבית מלאה בסביבת DEV.
+- **QA / Blocked by Access:** לא ניתן להשלים בדיקה עקב כלי/סשן/רשת; לא מסווגים כאפליקציה שנכשלה.
+- **Done:** רק לאחר Acceptance + ראיה מהגרסה המתאימה, ללא הנחות על סמך קובץ ZIP.
+- **Deferred:** מחוץ לשלב DEV MVP1 הנוכחי.
 
-- [#3 Search](https://github.com/roee285-bit/selekt-product/issues/3), [#4 Supplier/Programs](https://github.com/roee285-bit/selekt-product/issues/4), [#5 Customers](https://github.com/roee285-bit/selekt-product/issues/5), [#6 Leads](https://github.com/roee285-bit/selekt-product/issues/6), [#7 Admin](https://github.com/roee285-bit/selekt-product/issues/7), [#8 DB](https://github.com/roee285-bit/selekt-product/issues/8), [#14 Reliability](https://github.com/roee285-bit/selekt-product/issues/14), [#15 Verified](https://github.com/roee285-bit/selekt-product/issues/15), [#16 Integrity](https://github.com/roee285-bit/selekt-product/issues/16).
-- נמצאו App, Routes, RLS, 35 migrations ו־5 קובצי SQL tests. יש חפיפה משמעותית למוצר, אך חסרים/סותרים חלקי Scope; לא בוצע E2E חי, build או בדיקת Production. סטטוסי Issues הקיימים נשארים ללא שינוי.
-
-## DONE — Product scope only
-
-- [x] [#1 — MVP Scope Lock](https://github.com/roee285-bit/selekt-product/issues/1) — baseline החלטות, **לא הוכחת מימוש**.
-
-## PARKING LOT
-
-- [#12 — V2 Scope Guard](https://github.com/roee285-bit/selekt-product/issues/12). לא מוסיפים/מסירים Scope ללא אישור מפורש; יכולת V2 שקיימת בקוד אינה אישור להפעילה.
-
-## כללי בקרה
-
-1. `Exists in ZIP` / `Reported by developer` / `Runtime PASS` / `Production verified` הם מצבי ראיות שונים.
-2. אין לסמן Done על סמך archive או CHANGELOG בלבד, ואין לסגור Launch Gate ללא בעלים מאשר.
-3. P0 פתוח או אי־התאמה לא מאושרת בתחום Leads/Legal/Trust/Permissions/Program metadata חוסם הכרזת GO.
-4. כל סתירת Scope מחייבת Decision Log לפני שינוי באפיון, בקוד או בקריטריוני QA.
-5. מספר הספקים, ההיתכנות המסחרית והמצב החי של ההשקה אינם ניתנים להסקה מהארכיון.
+**כלל ניהול:** `Source code exists` ≠ `DEV UI observed` ≠ `DEV functionality passed`. אין לשנות סטטוס Issues או שדות GitHub Project ללא ראיית בדיקה או הנחיית בעל המוצר. מסמך זה הוא Board תיעודי; הוא אינו סנכרון אוטומטי עם GitHub Projects האינטראקטיבי.
