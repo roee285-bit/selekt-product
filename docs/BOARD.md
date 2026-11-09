@@ -13,7 +13,7 @@
 ## NOW — מיקוד נוכחי (3 שערים)
 
 1. **Product decisions — P0:** [#6 Guest Lead](https://github.com/roee285-bit/selekt-product/issues/6), [#5/#8 Multi-role](https://github.com/roee285-bit/selekt-product/issues/8), [#3 GEFEN](https://github.com/roee285-bit/selekt-product/issues/3), [#12 Supplier status/history V2](https://github.com/roee285-bit/selekt-product/issues/12). סתירות בין הקוד ל־Scope Lock; **דרוש אישור, אין שינוי החלטה אוטומטי**.
-2. **Missing MVP fields / Legal — P0:** [#4 Program](https://github.com/roee285-bit/selekt-product/issues/4), [#8 Schema](https://github.com/roee285-bit/selekt-product/issues/8), [#13 Legal](https://github.com/roee285-bit/selekt-product/issues/13). Activity Format (3 מצבים), התאמה לחינוך מיוחד, versioned Legal Acceptance; בדיקת Verified links.
+2. **Legal + targeted Acceptance — P0/P1:** [#13 Legal](https://github.com/roee285-bit/selekt-product/issues/13), [#4 Program](https://github.com/roee285-bit/selekt-product/issues/4), [#8 Schema](https://github.com/roee285-bit/selekt-product/issues/8). בדיקת versioned Legal Acceptance ו־Verified links; אימות ״שניהם״ לפי Acceptance. פעילות מתמשכת קיימת; חינוך מיוחד ב־V2, לא P0.
 3. **Release evidence + QA — P0:** [#17 QA fixes](https://github.com/roee285-bit/selekt-product/issues/17), [#11 E2E](https://github.com/roee285-bit/selekt-product/issues/11), [#14 Leads](https://github.com/roee285-bit/selekt-product/issues/14), [#16 Integrity](https://github.com/roee285-bit/selekt-product/issues/16). בדיקות על Build/DB מזוהים, Regression מלא, מובייל/טאבלט/דסקטופ; אין להמיר חסם Browser בכישלון אפליקציה.
 
 ## NEXT — השלמת עמודים ציבוריים ושער השקה
