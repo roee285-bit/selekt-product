@@ -2,6 +2,15 @@
 
 > מעודכן ל־2026-11-09 על בסיס ביקורת סטטית של ארכיון קוד השותף (הארכיון מתעד פיתוח עד 2026-10-25). [דוח הפערים והראיות](DEV_SNAPSHOT_AUDIT_2026-11-09.md) · [תוכנית העבודה](WORKPLAN.md) · [Scope Lock](SCOPE_LOCK_2026-10-05.md).
 
+## ראיות DEV (2026-11-09)
+
+- **Observed:** עמוד הבית החי כולל Hero/חיפוש, קטגוריות, תוכניות, Verified suppliers, ניווט לחשבון/אדמין/ספק בסשן מחובר, וקישורי Legal ב־Footer.
+- **Not Tested:** Guest flow, search results, program details, contact action, login, Lead creation, admin operations, 390×844/768/1280, Production. לא לשנות Issue status עקב הצגת UI בלבד.
+- **Seed/QA:** כרטיסים עם שמות בדיקות מופיעים ב־DEV; יש לוודא שאינם נספרים כ־First Supply אמיתי ואינם מופיעים בהשקה לציבור.
+- **Evidence:** [DEV Home read-only observation](DEV_HOME_READONLY_2026-11-09.md). בדיקת הדפדפן המחובר היא Read-only page context ללא ניווט; בדפדפן מקומי הגישה לרשת חסומה, לא תקלה מוכחת באתר.
+
+---
+
 ## תיקון מצב — 2026-11-09
 
 - **חינוך מיוחד:** עבר ל־V2 בהחלטת בעל המוצר; **אינו חסם MVP1**. כל אזכור ישן של חוסר `special_education_fit` כחסם P0 להלן מתוקן בהתאם.
