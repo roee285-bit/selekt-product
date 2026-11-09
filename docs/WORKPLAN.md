@@ -20,7 +20,7 @@
 
 ### NOW — שלושה שערי עבודה
 1. **שער החלטות מוצר (P0):** להכריע עם השותף האם שומרים על Guest Lead ללא הרשמה (#6), על Multi-role account (#5/#8), האם ומתי מציגים GEFEN (#3/#4), ומה עושים עם עדכון סטטוס ליד בידי ספק + היסטוריית ליד שכבר פותחו למרות דחייתם ל־V2 (#6/#12). לא משנים קוד/Scope על סמך ההכרה בפער.
-2. **פערי MVP מאומתים סטטית (P0):** להשלים `PROGRAM.activity_format` עם חד־פעמי/מתמשך/שניהם ו־`special_education_fit` + תג נכון, בשכבות DB/UI/QA (#4/#8/#11); לאמת versioned `LEGAL_ACCEPTANCE` ו־Legal Release (#13).
+2. **Legal + remaining Acceptance checks:** לאמת versioned `LEGAL_ACCEPTANCE` ו־Legal Release (#13); פעילות מתמשכת קיימת בקוד ובצילום DEV, ולבדוק את פרשנות ״שניהם״ אם עדיין נדרשת (#4/#8/#11). התאמה לחינוך מיוחד עברה ל־V2 ואינה חסם.
 3. **QA ו־Release Evidence (P0):** למפות ממצאי #17 ו־#11 לגרסת פיתוח אמת; לבדוק Lead transitions, RLS, מחיקות היסטוריות, onboarding/Verified, 390×844/768/1280 ורגרסיה. אין לסמן PASS על סמך מסמכי הפיתוח בלבד.
 
 ### NEXT — תוכן ציבורי ומוכנות השקה
@@ -38,7 +38,7 @@
 ### חריגות מוצר שלא אושרו
 - **Guest contact:** קוד ה־Signup Gate וה־DB מונעים Lead של אורח, בניגוד ל־Scope Lock.
 - **Account profiles:** `guard_one_profile` מנוגד לתמיכה בכמה תפקידי משתמש.
-- **Program metadata:** חסר `special_education_fit`; `is_ongoing` אינו מחליף שלוש אפשרויות Activity Format.
+- **Program metadata:** פעילות מתמשכת נמצאת בקוד והוצגה בצילום DEV; ייצוג ״שניהם״ במפורש טרם אומת. התאמה לחינוך מיוחד הועברה ל־V2 בהחלטת בעל המוצר.
 - **GEFEN:** מידע קיים, תצוגה ציבורית מוסתרת עם `SHOW_GEFEN=false`.
 - **V2 creep:** Supplier משנה Lead status ויש טבלת `lead_status_history`.
 - **Legal:** חסרה עדות למנגנון `LEGAL_ACCEPTANCE` גרסאי; קיים consent timestamps בסיסי.
